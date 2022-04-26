@@ -1,13 +1,10 @@
-import {createHTMLElement} from '../../helpers/dom.js'
-import {ael} from '../../helpers/domevents.js'
+import { createButton } from './button.js'
 
-function initializeDeleteButton(text){
-    const btn = createHTMLElement('button', 'Delete')
-    ael(btn, 'click', ()=>{
-        console.log('Delete')
+function initializeDeleteButton(){
+    const deleteBtn = createButton('Delete', ()=>{
         //code here
-    }, true)
-    return btn
+    })
+    return deleteBtn
 }
 
 export {initializeDeleteButton}

@@ -1,13 +1,10 @@
-import {createHTMLElement} from '../../helpers/dom.js'
-import {ael} from '../../helpers/domevents.js'
+import { createButton } from './button.js'
 
-function initializeEditButton(text){
-    const btn = createHTMLElement('button', 'Edit')
-    ael(btn, 'click', ()=>{
-        console.log('Edit')
+function initializeEditButton(){
+    const editBtn = createButton('Edit', ()=>{
         //code here
-    }, true)
-    return btn
+    })
+    return editBtn
 }
 
 export {initializeEditButton}

@@ -8,7 +8,7 @@ function addContact(contact, UI_Selector){
 }
 
 function removeContact(contact){
-    
+    //
 }
 
 export {ContactList, addContact}

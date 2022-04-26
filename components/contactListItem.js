@@ -3,9 +3,11 @@ import {initializeEditButton} from './widgets/editButtonContact.js'
 import {initializeDeleteButton} from './widgets/deleteButtonContact.js'
 
 function createContactListItem(contact){
-    const li = createHTMLElement('li', contact.fullname)
-    li.append(initializeEditButton('Edit'))
-    li.append(initializeDeleteButton('Delete'))
+    const li = createHTMLElement('li')
+    li.append(initializeEditButton())
+    li.append(initializeDeleteButton())
+    li.append(contact.fullname)
+    console.log('fdgszgdfgzdfgfdg')
     return li
 }
 

@@ -1,5 +1,5 @@
 const qs = (selector, baseElement = document) => baseElement.querySelector(selector)
-const qsa = (baseElement, selector) => baseElement.querySelectorAll(selector).ToArray()
+const qsa = (selector, baseElement = document) => baseElement.querySelectorAll(selector)
 
 const createHTMLElement = (itemToCreate, textContent = '', attributes = [], classes = [], itemsAppend = []) => {
     const item = document.createElement(itemToCreate)
@@ -21,7 +21,5 @@ const appendElements = (target, itemArr) => {
     itemArr.forEach(element => { target.append(element) })
     return target
 }
-
-
 
 export {qs, qsa, createHTMLElement, applyAttributes, applyClasses, appendElements}

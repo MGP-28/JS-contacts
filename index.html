@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos</title>
+    <title>Contacts</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <h1>Lista de Contactos</h1>
@@ -13,10 +14,10 @@
         <input type="text" placeholder="Full name" name="fullname">
         <input type="text" placeholder="Phone number" name="phone_number">
         <input type="email" placeholder="E-mail" name="email">
-        <input type="submit" value="Guardar">
-        <input type="reset" value="Limpar">
+        <input type="submit" value="Guardar" isButton="true">
+        <input type="reset" value="Limpar" isButton="true">
     </form>
-    <ul></ul>
+    <ul style="list-style-type:none"></ul>
     <script src="./main.js" type="module"></script>
 </body>
 </html>
