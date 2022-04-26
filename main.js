@@ -27,7 +27,8 @@ ael(form, 'submit', (event) => {
     }
 
     //store data
-    addContact(formData, 'ul')
+    const contact = new Contact(formData)
+    addContact(contact, 'ul')
 
     //comunicate data
 

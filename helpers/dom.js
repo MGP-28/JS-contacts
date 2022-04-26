@@ -1,9 +1,9 @@
 const qs = (selector, baseElement = document) => baseElement.querySelector(selector)
 const qsa = (baseElement, selector) => baseElement.querySelectorAll(selector).ToArray()
 
-const createHTMLElement = (itemToCreate, attributes = [], classes = [], itemsAppend = []) => {
+const createHTMLElement = (itemToCreate, textContent = '', attributes = [], classes = [], itemsAppend = []) => {
     const item = document.createElement(itemToCreate)
-    console.log('->', attributes)
+    item.textContent = textContent
     applyAttributes(item, attributes)
     applyClasses(item, classes)
     appendElements(item, itemsAppend)
