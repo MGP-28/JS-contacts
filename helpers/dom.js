@@ -10,7 +10,10 @@ const createHTMLElement = (itemToCreate, textContent = '', attributes = [], clas
     return item
 }
 const applyAttributes = (target, attributeArr) => {
-    attributeArr.forEach(element => { target.setAttribute(element.name, element.value) })
+    attributeArr.forEach(element => { 
+        console.log(element)
+        target.setAttribute(element.name, element.value) 
+    })
     return target
 }
 const applyClasses = (target, classArr) => {

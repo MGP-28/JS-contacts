@@ -2,7 +2,7 @@ import { qs } from './helpers/dom.js'
 import { ael } from './helpers/domevents.js'
 import { Contact } from './model/contact.js'
 import { ContactVal } from './validators/Contact/index.js'
-import { addContact } from './store/contactList.js'
+import { addContact } from './presenter/contactList.js'
 
 function startSubmitHandler(){
     const form = qs('form')

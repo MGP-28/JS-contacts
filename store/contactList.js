@@ -1,14 +1,12 @@
-import {addContactListItem} from '../presenter/contactListUI.js'
-
 const ContactList = []
 
-function addContact(contact, UI_Selector){
+function addContactToStorage(contact, UI_Selector){
     ContactList.push(contact)
-    addContactListItem(contact, UI_Selector)
+    return ContactList.length-1
 }
 
-function removeContact(contact){
+function removeContactFromStorage(contact){
     //
 }
 
-export {ContactList, addContact}
+export {ContactList, addContactToStorage}

@@ -1,5 +1,5 @@
 import { startSubmitHandler } from './events.js'
-import { buildStyle } from './presenter/styleConfigurator.js'
+import { buildStyle } from './styleConfigurator.js'
 
 //global selectors
 
