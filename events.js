@@ -2,35 +2,64 @@ import { qs } from './helpers/dom.js'
 import { ael } from './helpers/domevents.js'
 import { Contact } from './model/contact.js'
 import { ContactVal } from './validators/Contact/index.js'
-import { addContact } from './presenter/contactList.js'
+import { addContact, buildStartingList, saveEditedContact } from './presenter/contactList.js'
 
 function startSubmitHandler(){
     const form = qs('form')
     ael(form, 'submit', (event) => {
-        
-        //get data
-        const inputList = [...event.target.children].filter(input => (input.name !== ''))
-        const formData = {}
-        inputList.forEach(input => {
-            formData[input.name] = input.value
-        });
-
-        //validate data
-        try {
-            ContactVal.exec(formData)
-        } catch (error) {
-            console.log(error)
-            return
-        }
-
-        //store data
-        const contact = new Contact(formData)
-        addContact(contact, 'ul')
-
-        //comunicate data
-
-
+        if(!event.target.hasAttribute('editing')) addContactHandler(event)
+        else editContactHandler(event)
     }, true, false)
 }
 
-export {startSubmitHandler}
+function addContactHandler(event){
+    
+    const contact = getContact(event)
+    if(!contact) return
+
+    //store data
+    addContact(contact)
+    
+    //comunicate data
+
+}
+
+function editContactHandler(event){
+
+    const contact = getContact(event)
+    if(!contact) return
+
+    //replace data
+    const index = event.target.getAttribute('editing')
+    saveEditedContact(contact, index)
+
+    //comunicate data
+    
+}
+
+function buildList(){
+    buildStartingList()
+}
+
+function getContact(event){
+    
+    //get Data
+    const inputList = [...event.target.children].filter(input => (input.name !== ''))
+    const formData = {}
+    inputList.forEach(input => {
+        formData[input.name] = input.value
+    });
+
+    //validate Data
+    try {
+        ContactVal.exec(formData)
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+
+    //build contact
+    return new Contact(formData)
+}
+
+export {startSubmitHandler, buildList}

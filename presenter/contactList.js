@@ -1,13 +1,26 @@
-import { addContactListItem }  from '../ui_Manager/contactListUI.js'
-import { addContactToStorage } from '../store/contactList.js'
+import { ContactList, addContactToStorage, removeContactFromStorage, editContactFromStorage } from '../store/contactList.js'
+import { buildList, addContactListItem, formBeingEdited }  from '../ui_Manager/contactListUI.js'
 
-function addContact(contact, UI_Selector){
+function buildStartingList(){
+    buildList(ContactList)
+}
+
+function addContact(contact){
     const index = addContactToStorage(contact)
-    addContactListItem(contact, UI_Selector, index)
+    addContactListItem(contact, 'ul', index)
 }
 
-function refreshContactListItem(){
-    //
+function removeContact(index){
+    removeContactFromStorage(index)
+    buildList(ContactList)
 }
 
-export { addContact }
+function editContact(index){
+    formBeingEdited(index, ContactList[index])
+}
+
+function saveEditedContact(contact, index){
+    editContactFromStorage(contact, index)
+}
+
+export { buildStartingList, addContact, removeContact, editContact, saveEditedContact }

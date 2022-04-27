@@ -11,7 +11,6 @@ const createHTMLElement = (itemToCreate, textContent = '', attributes = [], clas
 }
 const applyAttributes = (target, attributeArr) => {
     attributeArr.forEach(element => { 
-        console.log(element)
         target.setAttribute(element.name, element.value) 
     })
     return target

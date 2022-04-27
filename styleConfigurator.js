@@ -16,7 +16,7 @@ function styleBody(){
 
 function styleTitles(){
     const classesToAdd = [
-        'mb-3'
+        'mb-3', 'font-bold', 'text-3xl'
     ]
     const titles = qsa('h1')
     titles.forEach(title => {
@@ -26,7 +26,7 @@ function styleTitles(){
 
 function styleInputs(){
     const classesToAdd = [
-        'border', 'p-1', 'mr-2'
+        'border', 'p-1', 'mr-2', 'rounded', 'mb-2'
     ]
     const inputs = qsa('input')
     inputs.forEach(input => {
@@ -36,10 +36,12 @@ function styleInputs(){
 
 function styleInputButtons(){
     const classesToAdd = [
-        'rounded', 'px-5'
+        'px-5', 'font-semibold', ''
     ]
     const inputButtons = qsa('input[isButton=true]')
     inputButtons.forEach(inputButton => {
+        classesToAdd.pop()
+        classesToAdd.push((inputButton.type === 'submit') ? 'bg-green-300' : 'bg-red-300')
         applyClasses(inputButton, classesToAdd)
     });
 }
