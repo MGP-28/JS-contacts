@@ -14,6 +14,7 @@ function buildList(contactList){
         const contact = contactList[index];
         addContactListItem(contact, 'ul', index)
     }
+    buttonClear.classList.remove('hidden')
 }
 
 function addContactListItem(contact, UI_Selector, index){

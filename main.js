@@ -1,4 +1,4 @@
-import { startSubmitHandler, buildList } from './events.js'
+import { startSubmitHandler, buildList, saveOnPageUnloadHandler } from './events.js'
 import { buildStyle } from './styleConfigurator.js'
 
 //global selectors
@@ -10,3 +10,4 @@ buildStyle()
 //call events
 startSubmitHandler()
 buildList()
+saveOnPageUnloadHandler()

@@ -17,6 +17,10 @@ class Contact {
     get email(){
         return this.#email
     }
+    stringuifyObject(){
+        const jsonString = JSON.stringify({fullname: this.#fullname, phone_number: this.#phone_number, email: this.#email})
+        return jsonString
+    }
 }
 
 export {Contact}

@@ -2,7 +2,7 @@ import { qs } from './helpers/dom.js'
 import { ael } from './helpers/domevents.js'
 import { Contact } from './model/contact.js'
 import { ContactVal } from './validators/Contact/index.js'
-import { addContact, buildStartingList, saveEditedContact } from './presenter/contactList.js'
+import { addContact, buildStartingList, saveEditedContact, saveToLocalStorageOnExit } from './presenter/contactList.js'
 
 function startSubmitHandler(){
     const form = qs('form')
@@ -62,4 +62,10 @@ function getContact(event){
     return new Contact(formData)
 }
 
-export {startSubmitHandler, buildList}
+function saveOnPageUnloadHandler(){
+    window.addEventListener("beforeunload", function (e) {
+        saveToLocalStorageOnExit()
+    });
+}
+
+export {startSubmitHandler, buildList, saveOnPageUnloadHandler}
