@@ -2,15 +2,17 @@ import {Contact} from '../model/contact.js'
 
 const ContactList = []
 
-//seedDatabase()
+seedDatabase()
 
 function seedDatabase(){
+    if(!(localStorage.length ==0)) return
     const contacts = [
-        new Contact({fullname: 'Joao', phone_number: '999999999', email: 'eu@gmail.com'}),
-        new Contact({fullname: 'Joana', phone_number: '919999999', email: 'tu@gmail.com'}),
-        new Contact({fullname: 'Jose Binoco', phone_number: '939999999', email: 'nos@gmail.com'}),
-        new Contact({fullname: 'Nos', phone_number: '922222222', email: 'nos@gmail.com'}),
-        new Contact({fullname: 'Meo', phone_number: '912345678', email: 'nos@gmail.com'})
+        new Contact({fullname: 'Joao Pereira', phone_number: '000000000', email: 'eu@gmail.com'}),
+        new Contact({fullname: 'Beatriz Lopes', phone_number: '111111111', email: 'tu@gmail.com'}),
+        new Contact({fullname: 'Jose Binoco', phone_number: '222222222', email: 'nos@gmail.com'}),
+        new Contact({fullname: 'Pedro Lima', phone_number: '333333333', email: 'vos@gmail.com'}),
+        new Contact({fullname: 'Tiago Borges', phone_number: '444444444', email: 'eles@gmail.com'}),
+        new Contact({fullname: 'Eva Mendes', phone_number: '555555555', email: 'ela@gmail.com'})
     ]
     contacts.forEach(contact => {
         ContactList.push(contact)

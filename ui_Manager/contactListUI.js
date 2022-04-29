@@ -5,8 +5,8 @@ const ulList = qs('ul')
 const form = qs('form')
 const inputName = qs('form>input[name="fullname"]')
 const inputPhoneNumber = qs('form>input[name="phone_number"]')
-const inputEmail = qs('form>input[name="email"]')
-const buttonClear = qs('form>input[type="reset"]')
+const inputEmail = qs('form>div>input[name="email"]')
+const buttonClear = qs('form>div>input[type="reset"]')
 
 function buildList(contactList){
     ulList.textContent = ''

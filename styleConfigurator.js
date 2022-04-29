@@ -1,32 +1,13 @@
 import { qs, qsa, applyClasses } from './helpers/dom.js'
 
 function buildStyle(){
-    styleBody()
-    styleTitles()
     styleInputs()
     styleInputButtons()
 }
 
-function styleBody(){
-    const classesToAdd = [
-        'p-5'
-    ]
-    applyClasses(qs('body'), classesToAdd)
-}
-
-function styleTitles(){
-    const classesToAdd = [
-        'mb-3', 'font-bold', 'text-3xl'
-    ]
-    const titles = qsa('h1')
-    titles.forEach(title => {
-        applyClasses(title, classesToAdd)
-    });
-}
-
 function styleInputs(){
     const classesToAdd = [
-        'border', 'p-1', 'mr-2', 'rounded', 'mb-2'
+        'border', 'p-1', 'rounded', 'mb-2'
     ]
     const inputs = qsa('input')
     inputs.forEach(input => {
