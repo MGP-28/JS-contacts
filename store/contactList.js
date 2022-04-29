@@ -30,8 +30,7 @@ function loadFromLocalStorage(){
 }
 
 function addContactToStorage(contact){
-    
-    ContactList.push()
+    ContactList.push(contact)
     return ContactList.length-1
 }
 

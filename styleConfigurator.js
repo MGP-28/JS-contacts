@@ -7,7 +7,7 @@ function buildStyle(){
 
 function styleInputs(){
     const classesToAdd = [
-        'border', 'p-1', 'rounded', 'mb-2'
+        'border', 'p-1', 'rounded', 'mb-3'
     ]
     const inputs = qsa('input')
     inputs.forEach(input => {
