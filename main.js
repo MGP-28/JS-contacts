@@ -1,5 +1,5 @@
-import { startSubmitHandler, buildList, saveOnPageUnloadHandler } from './events.js'
-import { buildStyle } from './styleConfigurator.js'
+import { startSubmitHandler, buildList, saveOnPageUnloadHandler } from './assets/js/events.js'
+import { buildStyle } from './assets/js/styleConfigurator.js'
 
 //global selectors
 

@@ -1,4 +1,4 @@
-import { qs, qsa, applyClasses } from './helpers/dom.js'
+import { qs, qsa, applyClasses } from '../../helpers/dom.js'
 
 function buildStyle(){
     styleInputs()
