@@ -1,5 +1,5 @@
 import { ContactList, loadFromLocalStorage, addContactToStorage, removeContactFromStorage, editContactFromStorage, saveToLocalStorage } from '../store/contactList.js'
-import { buildList, addContactListItem, formBeingEdited }  from '../view/events/contactListUI.js'
+import { buildList, addContactListItem, formBeingEdited, restoreForm, restoreList }  from '../view/events/contactListUI.js'
 
 function buildStartingList(){
     loadFromLocalStorage()
@@ -28,7 +28,8 @@ function saveEditedContact(contact, index){
         console.log('--- contact edited: ', ContactList[index])
         console.log('--------------- to: ', contact)
     editContactFromStorage(contact, index)
-    buildList(ContactList)
+    //buildList(ContactList)
+    restoreList(contact, index)
         console.log(ContactList)
 }
 

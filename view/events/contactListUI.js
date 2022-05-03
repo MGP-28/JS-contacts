@@ -36,4 +36,26 @@ function formBeingEdited(index, contact){
     }
 }
 
-export {buildList,addContactListItem,formBeingEdited}
+function restoreForm(){
+    form.removeAttribute('editing')
+    buttonClear.classList.remove('hidden')
+    const name = inputName
+    inputName.value = ''
+    inputPhoneNumber.value = ''
+    inputEmail.value = ''
+    return name
+}
+
+function restoreList(contact, index){
+    for (let li of ulList.children){
+        const deleteBtn = [...li.querySelectorAll('button')].find(el => el.textContent == 'Delete')
+        deleteBtn.classList.remove('hidden')
+        if(li.getAttribute('index') != index){ li.classList.remove('hidden') }
+        else{
+            ulList.removeChild(li)
+            //addContactListItem(contact, 'ul', index)
+        }
+    }
+}
+
+export {buildList, addContactListItem, formBeingEdited, restoreForm, restoreList}
