@@ -1,4 +1,4 @@
-import {qs} from '../helpers/dom.js'
+import {qs} from '../../helpers/dom.js'
 import {createContactListItem} from '../components/contactListItem.js'
 
 const ulList = qs('ul')

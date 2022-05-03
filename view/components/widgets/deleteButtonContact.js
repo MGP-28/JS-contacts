@@ -1,6 +1,6 @@
 import { createButton } from './button.js'
-import { applyClasses } from '../../helpers/dom.js'
-import { removeContact } from '../../presenter/contactList.js'
+import { applyClasses } from '../../../helpers/dom.js'
+import { removeContact } from '../../../presenter/contactList.js'
 
 function initializeDeleteButton(){
     const deleteBtn = createButton('Delete', (event)=>{

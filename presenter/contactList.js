@@ -1,5 +1,5 @@
 import { ContactList, loadFromLocalStorage, addContactToStorage, removeContactFromStorage, editContactFromStorage, saveToLocalStorage } from '../store/contactList.js'
-import { buildList, addContactListItem, formBeingEdited }  from '../ui_Manager/contactListUI.js'
+import { buildList, addContactListItem, formBeingEdited }  from '../view/events/contactListUI.js'
 
 function buildStartingList(){
     loadFromLocalStorage()

@@ -1,4 +1,4 @@
-import {createHTMLElement} from '../helpers/dom.js'
+import {createHTMLElement} from '../../helpers/dom.js'
 import {initializeEditButton} from './widgets/editButtonContact.js'
 import {initializeDeleteButton} from './widgets/deleteButtonContact.js'
 

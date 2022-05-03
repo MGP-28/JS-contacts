@@ -1,5 +1,5 @@
 import { createButton } from './button.js'
-import { editContact } from '../../presenter/contactList.js'
+import { editContact } from '../../../presenter/contactList.js'
 
 function initializeEditButton(){
     const editBtn = createButton('Edit', (event)=>{
