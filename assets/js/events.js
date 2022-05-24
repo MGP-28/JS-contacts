@@ -1,11 +1,10 @@
-import { qs } from '../../helpers/dom.js'
 import { ael } from '../../helpers/domevents.js'
 import { Contact } from '../../model/contact.js'
 import { ContactVal } from '../../validators/Contact/index.js'
 import { addContact, buildStartingList, saveEditedContact, saveToLocalStorageOnExit } from '../../presenter/contactList.js'
 
 function startSubmitHandler(){
-    const form = qs('form')
+    const form = document.querySelector('form')
     ael(form, 'submit', (event) => {
         if(!event.target.hasAttribute('editing')) addContactHandler(event)
         else editContactHandler(event)

@@ -1,13 +1,15 @@
 import { startSubmitHandler, buildList, saveOnPageUnloadHandler } from './assets/js/events.js'
-import { buildStyle } from './assets/js/styleConfigurator.js'
+import { classesHTMLtoJsArray } from './helpers/syntax.js'
+import { buildUI } from "./presenter/buildUI.js";
 
 //global selectors
 
-
-//style configurator
-buildStyle()
+//build HTML
+buildUI()
 
 //call events
 startSubmitHandler()
 buildList()
 saveOnPageUnloadHandler()
+
+classesHTMLtoJsArray('')

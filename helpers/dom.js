@@ -1,7 +1,10 @@
-const qs = (selector, baseElement = document) => baseElement.querySelector(selector)
-const qsa = (selector, baseElement = document) => baseElement.querySelectorAll(selector)
-
-const createHTMLElement = (itemToCreate, textContent = '', attributes = [], classes = [], itemsAppend = []) => {
+const createHTMLElement = (
+        itemToCreate, //h1, div, input, ...
+        textContent = '', 
+        classes = [], 
+        attributes = [], 
+        itemsAppend = []
+    ) => {
     const item = document.createElement(itemToCreate)
     item.textContent = textContent
     applyAttributes(item, attributes)
@@ -24,4 +27,4 @@ const appendElements = (target, itemArr) => {
     return target
 }
 
-export {qs, qsa, createHTMLElement, applyAttributes, applyClasses, appendElements}
+export {createHTMLElement, applyAttributes, applyClasses, appendElements}
